@@ -3,7 +3,7 @@ name: Deploy
 on:
   push:
     branches:
-      - master
+      - main
       
 jobs:
   uploading:
@@ -34,4 +34,4 @@ jobs:
       env:
         COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_PASSWORD }}
       run: |
-        pod trunk push AirKit.podspec
+        pod trunk push AirArchitecture.podspec

@@ -1,6 +1,10 @@
 // Copyright © 2021 Yurii Lysytsia. All rights reserved.
 
+/// Coordinator contains and manages dependencies of child coordinators.
 public protocol Coordinator: AnyObject {
+    /// Current state of this coordinator.
+    var state: CoordinatorState { get }
+    
     /// The dependency of parent coordinator that has started current coordinator.
     var parent: Coordinator? { get }
     
