@@ -1,12 +1,12 @@
 name: Tag has been created
 
 on:
-  created:
+  create:
     tags:
-      - '*.*.*' # Push events to matching `*.*.*`, i.e. 1.0.0, v20.15.10
+      - '*.*.*' # Create tag to matching `*.*.*`, i.e. 1.0.0, v20.15.10
   push:
     tags:
-      - '*.*.*' # Push events to matching `*.*.*`, i.e. 1.0.0, v20.15.10
+      - '*.*.*' # Push tag to matching `*.*.*`, i.e. 1.0.0, v20.15.10
 
 jobs:
   create_release_draft:
