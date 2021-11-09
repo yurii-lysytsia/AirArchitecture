@@ -39,6 +39,16 @@ final class CoordinatorTests: XCTestCase {
         XCTAssertEqual(sut.state, .inactive)
     }
     
+    func testParent() {
+        let child = BaseCoordinator()
+        
+        sut.add(coordinator: child)
+        XCTAssertTrue(child.parent === sut)
+        
+        sut = nil
+        XCTAssertNil(child.parent)
+    }
+    
     func testChildren() {
         let child = BaseCoordinator()
         
