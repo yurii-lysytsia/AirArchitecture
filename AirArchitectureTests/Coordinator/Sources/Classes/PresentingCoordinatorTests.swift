@@ -16,7 +16,6 @@ final class PresentingCoordinatorTests: XCTestCase {
         sut = BasePresentingCoordinator(rootViewController: rootViewController)
         
         XCTAssertEqual(sut.state, .initial)
-        XCTAssertNil(sut.parent)
         XCTAssertNil(sut.presentedCoordinator)
         XCTAssertTrue(sut.children.isEmpty)
         XCTAssertTrue(sut.rootViewController === rootViewController)
@@ -39,8 +38,6 @@ final class PresentingCoordinatorTests: XCTestCase {
     func testFlow() {
         let child = BasePresentingCoordinator(rootViewController: PresentingViewControllerMock())
         XCTAssertEqual(child.state, .initial)
-        XCTAssertNil(child.parent)
-        XCTAssertNil(child.presentingCoordinator)
         XCTAssertTrue(child.children.isEmpty)
         
         sut.start()
@@ -58,8 +55,6 @@ final class PresentingCoordinatorTests: XCTestCase {
         (sut as? BasePresentingCoordinator)?.presentationControllerDidDismiss(controller)
         XCTAssertTrue(sut.children.isEmpty)
         XCTAssertFalse(sut.contains(coordinator: child))
-        XCTAssertNil(child.parent)
-        XCTAssertNil(child.presentingCoordinator)
         XCTAssertNil(sut.presentedCoordinator)
     }
 }
@@ -72,8 +67,6 @@ private extension PresentingCoordinatorTests {
         sut.present(coordinator: child, animated: false, completion: nil)
         XCTAssertEqual(sut.children.count, 1)
         XCTAssertTrue(sut.contains(coordinator: child))
-        XCTAssertTrue(child.parent === sut)
-        XCTAssertTrue(child.presentingCoordinator === sut)
         XCTAssertTrue(sut.presentedCoordinator === child)
         XCTAssertTrue(sut.rootViewController.presentedViewController === child.rootViewController)
     }
@@ -82,8 +75,6 @@ private extension PresentingCoordinatorTests {
         sut.dismiss(animated: false, completion: nil)
         XCTAssertTrue(sut.children.isEmpty)
         XCTAssertFalse(sut.contains(coordinator: child))
-        XCTAssertNil(child.parent)
-        XCTAssertNil(child.presentingCoordinator)
         XCTAssertNil(sut.presentedCoordinator)
         XCTAssertNil(sut.rootViewController.presentedViewController)
     }

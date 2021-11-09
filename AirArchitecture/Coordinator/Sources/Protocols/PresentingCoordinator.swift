@@ -10,9 +10,6 @@ public protocol PresentingCoordinator: Coordinator {
     /// Returns the coordinator that is presented by this coordinator, if presented.
     var presentedCoordinator: PresentingCoordinator? { get }
     
-    /// Return the coordinator that presented this coordinator, if presented.
-    var presentingCoordinator: PresentingCoordinator? { get }
-    
     /// Starts the given coordinator and present another flow above coordinator.
     func present(coordinator: PresentingCoordinator, animated: Bool, completion: (() -> Void)?)
     

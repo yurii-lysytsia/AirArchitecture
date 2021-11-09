@@ -13,8 +13,6 @@ open class BasePresentingCoordinator: BaseCoordinator, PresentingCoordinator, UI
     
     open private(set) weak var presentedCoordinator: PresentingCoordinator?
     
-    open private(set) weak var presentingCoordinator: PresentingCoordinator?
-    
     // MARK: - Lifecycle
     
     /// Creates a new instance with given root view controller.
@@ -25,7 +23,6 @@ open class BasePresentingCoordinator: BaseCoordinator, PresentingCoordinator, UI
     open override func remove(coordinator: Coordinator) {
         // Remove dependency if coordinator was presented.
         if coordinator === presentedCoordinator {
-            (coordinator as? BasePresentingCoordinator)?.presentingCoordinator = nil
             presentedCoordinator = nil
         }
         
@@ -49,7 +46,6 @@ open class BasePresentingCoordinator: BaseCoordinator, PresentingCoordinator, UI
         // Present child coordinator root view controller
         rootViewController.present(coordinator.rootViewController, animated: animated) { [weak self] in
             self?.presentedCoordinator = coordinator
-            (coordinator as? BasePresentingCoordinator)?.presentingCoordinator = self
             completion?()
         }
     }
