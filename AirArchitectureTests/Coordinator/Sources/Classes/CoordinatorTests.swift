@@ -3,7 +3,7 @@
 import XCTest
 @testable import AirArchitecture
 
-final class BaseCoordinatorTests: XCTestCase {
+final class CoordinatorTests: XCTestCase {
     
     // MARK: - Private Properties
     

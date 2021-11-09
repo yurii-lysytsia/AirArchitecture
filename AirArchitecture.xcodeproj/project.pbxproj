@@ -15,7 +15,9 @@
 		5B7CB2252739A0000046177A /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7CB2242739A0000046177A /* BaseCoordinator.swift */; };
 		5B7CB2282739A11B0046177A /* CoordinatorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7CB2272739A11B0046177A /* CoordinatorState.swift */; };
 		5B7CB22A2739A60C0046177A /* PresentingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7CB2292739A60C0046177A /* PresentingCoordinator.swift */; };
-		5B9947DE2739C93D00A23F20 /* BaseCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9947DD2739C93D00A23F20 /* BaseCoordinatorTests.swift */; };
+		5B9947DE2739C93D00A23F20 /* CoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9947DD2739C93D00A23F20 /* CoordinatorTests.swift */; };
+		5B9947E02739CE3C00A23F20 /* PresentingCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9947DF2739CE3B00A23F20 /* PresentingCoordinatorTests.swift */; };
+		5B9947E42739D23300A23F20 /* BasePresentingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9947E32739D23300A23F20 /* BasePresentingCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +40,9 @@
 		5B7CB2242739A0000046177A /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		5B7CB2272739A11B0046177A /* CoordinatorState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorState.swift; sourceTree = "<group>"; };
 		5B7CB2292739A60C0046177A /* PresentingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentingCoordinator.swift; sourceTree = "<group>"; };
-		5B9947DD2739C93D00A23F20 /* BaseCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinatorTests.swift; sourceTree = "<group>"; };
+		5B9947DD2739C93D00A23F20 /* CoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTests.swift; sourceTree = "<group>"; };
+		5B9947DF2739CE3B00A23F20 /* PresentingCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentingCoordinatorTests.swift; sourceTree = "<group>"; };
+		5B9947E32739D23300A23F20 /* BasePresentingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresentingCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				5B7CB2242739A0000046177A /* BaseCoordinator.swift */,
+				5B9947E32739D23300A23F20 /* BasePresentingCoordinator.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -159,7 +164,8 @@
 		5B9947DC2739C92E00A23F20 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				5B9947DD2739C93D00A23F20 /* BaseCoordinatorTests.swift */,
+				5B9947DD2739C93D00A23F20 /* CoordinatorTests.swift */,
+				5B9947DF2739CE3B00A23F20 /* PresentingCoordinatorTests.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -280,6 +286,7 @@
 				5B7CB2282739A11B0046177A /* CoordinatorState.swift in Sources */,
 				5B7CB22A2739A60C0046177A /* PresentingCoordinator.swift in Sources */,
 				5B7CB2192739973B0046177A /* Coordinator.swift in Sources */,
+				5B9947E42739D23300A23F20 /* BasePresentingCoordinator.swift in Sources */,
 				5B7CB2252739A0000046177A /* BaseCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,7 +295,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B9947DE2739C93D00A23F20 /* BaseCoordinatorTests.swift in Sources */,
+				5B9947E02739CE3C00A23F20 /* PresentingCoordinatorTests.swift in Sources */,
+				5B9947DE2739C93D00A23F20 /* CoordinatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
