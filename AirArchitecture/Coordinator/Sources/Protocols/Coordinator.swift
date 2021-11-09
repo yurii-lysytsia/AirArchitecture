@@ -5,9 +5,6 @@ public protocol Coordinator: AnyObject {
     /// Current state of this coordinator.
     var state: CoordinatorState { get }
     
-    /// The dependency of parent coordinator that has started current coordinator.
-    var parent: Coordinator? { get }
-    
     /// The dependencies of this coordinator.
     var children: [Coordinator] { get }
     

@@ -2,7 +2,7 @@
 
 import UIKit
 
-final class MockPresentingViewController: UIViewController {
+final class PresentingViewControllerMock: UIViewController {
     
     // MARK: - Public Properties
     

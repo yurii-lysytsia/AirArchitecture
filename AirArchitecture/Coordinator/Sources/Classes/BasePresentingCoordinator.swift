@@ -7,39 +7,67 @@ import protocol UIKit.UIAdaptivePresentationControllerDelegate
 
 open class BasePresentingCoordinator: BaseCoordinator, PresentingCoordinator, UIAdaptivePresentationControllerDelegate {
     
-    // MARK: - Private Properties
+    // MARK: - Public Properties
     
     open private(set) var rootViewController: UIViewController
     
-    // MARK: - Inits
+    open private(set) weak var presentedCoordinator: PresentingCoordinator?
+    
+    // MARK: - Lifecycle
     
     /// Creates a new instance with given root view controller.
     public init(rootViewController: UIViewController) {
         self.rootViewController = rootViewController
     }
     
+    open override func remove(coordinator: Coordinator) {
+        // Remove dependency if coordinator was presented.
+        if coordinator === presentedCoordinator {
+            presentedCoordinator = nil
+        }
+        
+        super.remove(coordinator: coordinator)
+    }
+    
     // MARK: - Methods
     
-    /// Starts the given coordinator and present another flow above coordinator.
     open func present(coordinator: PresentingCoordinator, animated: Bool, completion: (() -> Void)? = nil) {
+        // Check is current coordinator has already presented coordinator.
+        if let presentedCoordinator = presentedCoordinator {
+            print("\(#function) - It's not possible to present the child coordinator `\(coordinator)`. Current coordinator has already presented coordinator `\(presentedCoordinator)`")
+            return
+        }
+        
+        // Add a new coordinator dependency
         add(coordinator: coordinator)
         coordinator.start()
         coordinator.rootViewController.presentationController?.delegate = self
-        rootViewController.present(coordinator.rootViewController, animated: animated, completion: completion)
+        
+        // Present child coordinator root view controller
+        rootViewController.present(coordinator.rootViewController, animated: animated) { [weak self] in
+            self?.presentedCoordinator = coordinator
+            completion?()
+        }
     }
     
-    /// Dismisses presented coordinator from current flow and removes dependency.
-    open func dismiss(coordinator: PresentingCoordinator, animated: Bool, completion: (() -> Void)? = nil) {
-        guard contains(coordinator: coordinator) else {
+    open func dismiss(animated: Bool, completion: (() -> Void)? = nil) {
+        guard let presentedCoordinator = presentedCoordinator else {
+            print("\(#function) - It's not possible to dismiss the child coordinator. Current coordinator didn't present any child coordinator")
+            return
+        }
+        
+        guard contains(coordinator: presentedCoordinator) else {
             print("\(#function) - It's not possible to dismiss the child coordinator. Current coordinator doesn't contains child coordinator")
             return
         }
-        guard rootViewController.presentedViewController == coordinator.rootViewController else {
+        
+        guard rootViewController.presentedViewController == presentedCoordinator.rootViewController else {
             print("\(#function) - It's not possible to dismiss the child coordinator. The presented view controller is not the same as child coordinator root view controller")
             return
         }
+        
         rootViewController.dismiss(animated: animated) { [weak self] in
-            self?.remove(coordinator: coordinator)
+            self?.remove(coordinator: presentedCoordinator)
             completion?()
         }
     }
@@ -48,11 +76,17 @@ open class BasePresentingCoordinator: BaseCoordinator, PresentingCoordinator, UI
     
     open func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
         // For iOS 13 and newer. When user dismiss view controller using swipe down.
-        guard let coordinator = children.first(where: { ($0 as? PresentingCoordinator)?.rootViewController === presentationController.presentedViewController }) else {
-            print("\(#function) - It's not possible to find coordinator with given presented view controller `\(presentationController.presentedViewController)`")
+        guard let presentedCoordinator = presentedCoordinator else {
+            print("\(#function) - It's not possible to dismiss the child coordinator. Current coordinator didn't present any child coordinator")
             return
         }
-        remove(coordinator: coordinator)
+        
+        guard presentedCoordinator.rootViewController === presentationController.presentedViewController else {
+            print("\(#function) - It's not possible to dismiss the child coordinator. The presented view controller is not the same as child coordinator root view controller")
+            return
+        }
+        
+        remove(coordinator: presentedCoordinator)
     }
 }
 #endif

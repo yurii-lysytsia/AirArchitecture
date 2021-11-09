@@ -4,13 +4,16 @@
 import class UIKit.UIViewController
 
 public protocol PresentingCoordinator: Coordinator {
-    /// Stored root view controller of current coordinator.
+    /// Returns the view controller that is root of this coordinator.
     var rootViewController: UIViewController { get }
-        
+    
+    /// Returns the coordinator that is presented by this coordinator, if presented.
+    var presentedCoordinator: PresentingCoordinator? { get }
+    
     /// Starts the given coordinator and present another flow above coordinator.
     func present(coordinator: PresentingCoordinator, animated: Bool, completion: (() -> Void)?)
     
     /// Dismisses presented coordinator from current flow and removes dependency.
-    func dismiss(coordinator: PresentingCoordinator, animated: Bool, completion: (() -> Void)?)
+    func dismiss(animated: Bool, completion: (() -> Void)?)
 }
 #endif

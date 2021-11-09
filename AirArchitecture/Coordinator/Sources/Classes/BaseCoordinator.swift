@@ -10,8 +10,6 @@ open class BaseCoordinator: NSObject, Coordinator {
     
     open private(set) var state: CoordinatorState = .initial
     
-    open private(set) weak var parent: Coordinator?
-    
     open private(set) var children = [Coordinator]()
     
     // MARK: - Methods
@@ -36,13 +34,11 @@ open class BaseCoordinator: NSObject, Coordinator {
             print("\(#function) - It's not possible to add a new child coordinator `\(coordinator)`. The coordinator has been already added")
             return
         }
-        (coordinator as? BaseCoordinator)?.parent = self
         children.append(coordinator)
     }
     
     open func remove(coordinator: Coordinator) {
         for (offset, child) in children.enumerated() where child === coordinator {
-            (child as? BaseCoordinator)?.parent = nil
             child.stop()
             children.remove(at: offset)
         }

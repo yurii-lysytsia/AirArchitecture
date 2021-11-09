@@ -7,7 +7,7 @@ Pod::Spec.new do |spec|
 
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   spec.name         = "AirArchitecture"
-  spec.version      = "0.2.0"
+  spec.version      = "0.2.1"
   spec.summary      = "Abstract classes to faster start of project coding!"
   spec.description  = "This framework contains different architecture pattern components, such as coordinator, MVC, MVP, MVVM and other base classes"
   spec.homepage     = "https://github.com/yurii-lysytsia/AirArchitecture"
