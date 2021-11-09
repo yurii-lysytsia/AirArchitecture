@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B7232EC273A5A1D00C91D8B /* PresentingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7232EB273A5A1D00C91D8B /* PresentingCoordinator.swift */; };
 		5B7CB205273993830046177A /* AirArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B7CB1FC273993830046177A /* AirArchitecture.framework */; };
 		5B7CB20B273993840046177A /* AirArchitecture.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B7CB1FF273993830046177A /* AirArchitecture.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B7CB2192739973B0046177A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7CB2182739973B0046177A /* Coordinator.swift */; };
@@ -15,6 +16,8 @@
 		5B7CB2252739A0000046177A /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7CB2242739A0000046177A /* BaseCoordinator.swift */; };
 		5B7CB2282739A11B0046177A /* CoordinatorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7CB2272739A11B0046177A /* CoordinatorState.swift */; };
 		5B9947DE2739C93D00A23F20 /* CoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9947DD2739C93D00A23F20 /* CoordinatorTests.swift */; };
+		5B9947E02739CE3C00A23F20 /* PresentingCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9947DF2739CE3B00A23F20 /* PresentingCoordinatorTests.swift */; };
+		5B9947E42739D23300A23F20 /* BasePresentingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9947E32739D23300A23F20 /* BasePresentingCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +33,7 @@
 /* Begin PBXFileReference section */
 		5B7232E8273A52FC00C91D8B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B7232EA273A536300C91D8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B7232EB273A5A1D00C91D8B /* PresentingCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentingCoordinator.swift; sourceTree = "<group>"; };
 		5B7CB1FC273993830046177A /* AirArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AirArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B7CB1FF273993830046177A /* AirArchitecture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AirArchitecture.h; sourceTree = "<group>"; };
 		5B7CB204273993830046177A /* AirArchitectureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AirArchitectureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,6 +43,8 @@
 		5B7CB2242739A0000046177A /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		5B7CB2272739A11B0046177A /* CoordinatorState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorState.swift; sourceTree = "<group>"; };
 		5B9947DD2739C93D00A23F20 /* CoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTests.swift; sourceTree = "<group>"; };
+		5B9947DF2739CE3B00A23F20 /* PresentingCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentingCoordinatorTests.swift; sourceTree = "<group>"; };
+		5B9947E32739D23300A23F20 /* BasePresentingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresentingCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				5B7CB2182739973B0046177A /* Coordinator.swift */,
+				5B7232EB273A5A1D00C91D8B /* PresentingCoordinator.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -129,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				5B7CB2242739A0000046177A /* BaseCoordinator.swift */,
+				5B9947E32739D23300A23F20 /* BasePresentingCoordinator.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -161,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				5B9947DD2739C93D00A23F20 /* CoordinatorTests.swift */,
+				5B9947DF2739CE3B00A23F20 /* PresentingCoordinatorTests.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -279,7 +288,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B7CB2282739A11B0046177A /* CoordinatorState.swift in Sources */,
+				5B7232EC273A5A1D00C91D8B /* PresentingCoordinator.swift in Sources */,
 				5B7CB2192739973B0046177A /* Coordinator.swift in Sources */,
+				5B9947E42739D23300A23F20 /* BasePresentingCoordinator.swift in Sources */,
 				5B7CB2252739A0000046177A /* BaseCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,6 +299,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B9947DE2739C93D00A23F20 /* CoordinatorTests.swift in Sources */,
+				5B9947E02739CE3C00A23F20 /* PresentingCoordinatorTests.swift in Sources */,
 				5B9947DE2739C93D00A23F20 /* CoordinatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
