@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5B7232EC273A5A1D00C91D8B /* PresentingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7232EB273A5A1D00C91D8B /* PresentingCoordinator.swift */; };
+		5B7232EF273A6A5F00C91D8B /* MockPresentingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7232EE273A6A5F00C91D8B /* MockPresentingViewController.swift */; };
 		5B7CB205273993830046177A /* AirArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B7CB1FC273993830046177A /* AirArchitecture.framework */; };
 		5B7CB20B273993840046177A /* AirArchitecture.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B7CB1FF273993830046177A /* AirArchitecture.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B7CB2192739973B0046177A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7CB2182739973B0046177A /* Coordinator.swift */; };
@@ -34,6 +35,7 @@
 		5B7232E8273A52FC00C91D8B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B7232EA273A536300C91D8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B7232EB273A5A1D00C91D8B /* PresentingCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentingCoordinator.swift; sourceTree = "<group>"; };
+		5B7232EE273A6A5F00C91D8B /* MockPresentingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPresentingViewController.swift; sourceTree = "<group>"; };
 		5B7CB1FC273993830046177A /* AirArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AirArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B7CB1FF273993830046177A /* AirArchitecture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AirArchitecture.h; sourceTree = "<group>"; };
 		5B7CB204273993830046177A /* AirArchitectureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AirArchitectureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +68,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B7232ED273A6A4C00C91D8B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5B7232EE273A6A5F00C91D8B /* MockPresentingViewController.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		5B7CB1F2273993830046177A = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				5B9947DB2739C92500A23F20 /* Sources */,
+				5B7232ED273A6A4C00C91D8B /* Helpers */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -300,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B9947DE2739C93D00A23F20 /* CoordinatorTests.swift in Sources */,
+				5B7232EF273A6A5F00C91D8B /* MockPresentingViewController.swift in Sources */,
 				5B9947E02739CE3C00A23F20 /* PresentingCoordinatorTests.swift in Sources */,
 				5B9947DE2739C93D00A23F20 /* CoordinatorTests.swift in Sources */,
 			);

@@ -2,9 +2,10 @@
 
 #if canImport(UIKit)
 import class UIKit.UIViewController
+import class UIKit.UIPresentationController
 import protocol UIKit.UIAdaptivePresentationControllerDelegate
 
-open class BasePresentingCoordinator: BaseCoordinator, PresentingCoordinator {
+open class BasePresentingCoordinator: BaseCoordinator, PresentingCoordinator, UIAdaptivePresentationControllerDelegate {
     
     // MARK: - Private Properties
     
@@ -19,27 +20,11 @@ open class BasePresentingCoordinator: BaseCoordinator, PresentingCoordinator {
     
     // MARK: - Methods
     
-    open func childCoordinator(with rootViewController: UIViewController) -> Coordinator? {
-        children.first {
-            guard let presentingCoordinator = $0 as? PresentingCoordinator else { return false }
-            return presentingCoordinator.rootViewController === rootViewController
-        }
-    }
-    
-    /// Removes child coordinator with root view controller if the coordinator contains.
-    open func removeCoordinator(with rootViewController: UIViewController) {
-        guard let coordinator = childCoordinator(with: rootViewController) else {
-            print("\(#function) - It's not possible to remove the child coordinator with root view controller `\(rootViewController)`. Current coordinator doesn't contains child coordinator")
-            return
-        }
-        remove(coordinator: coordinator)
-    }
-    
     /// Starts the given coordinator and present another flow above coordinator.
     open func present(coordinator: PresentingCoordinator, animated: Bool, completion: (() -> Void)? = nil) {
         add(coordinator: coordinator)
         coordinator.start()
-        coordinator.rootViewController.presentationController?.delegate = self as? UIAdaptivePresentationControllerDelegate
+        coordinator.rootViewController.presentationController?.delegate = self
         rootViewController.present(coordinator.rootViewController, animated: animated, completion: completion)
     }
     
@@ -57,6 +42,17 @@ open class BasePresentingCoordinator: BaseCoordinator, PresentingCoordinator {
             self?.remove(coordinator: coordinator)
             completion?()
         }
+    }
+    
+    // MARK: - UIAdaptivePresentationControllerDelegate
+    
+    open func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+        // For iOS 13 and newer. When user dismiss view controller using swipe down.
+        guard let coordinator = children.first(where: { ($0 as? PresentingCoordinator)?.rootViewController === presentationController.presentedViewController }) else {
+            print("\(#function) - It's not possible to find coordinator with given presented view controller `\(presentationController.presentedViewController)`")
+            return
+        }
+        remove(coordinator: coordinator)
     }
 }
 #endif
