@@ -40,7 +40,6 @@ open class BasePresentingCoordinator: BaseCoordinator, PresentingCoordinator, UI
         
         // Add a new coordinator dependency
         add(coordinator: coordinator)
-        coordinator.start()
         coordinator.rootViewController.presentationController?.delegate = self
         
         // Present child coordinator root view controller

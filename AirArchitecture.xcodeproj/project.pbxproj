@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B337177296872F9008017D7 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B337176296872F9008017D7 /* Disposable.swift */; };
+		5B3371792968730C008017D7 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3371782968730C008017D7 /* Observable.swift */; };
 		5B7232EC273A5A1D00C91D8B /* PresentingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7232EB273A5A1D00C91D8B /* PresentingCoordinator.swift */; };
 		5B7232EF273A6A5F00C91D8B /* PresentingViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7232EE273A6A5F00C91D8B /* PresentingViewControllerMock.swift */; };
 		5B7CB205273993830046177A /* AirArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B7CB1FC273993830046177A /* AirArchitecture.framework */; };
@@ -31,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B337176296872F9008017D7 /* Disposable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
+		5B3371782968730C008017D7 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		5B7232E8273A52FC00C91D8B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B7232EA273A536300C91D8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B7232EB273A5A1D00C91D8B /* PresentingCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentingCoordinator.swift; sourceTree = "<group>"; };
@@ -67,6 +71,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B337175296872E8008017D7 /* Observable */ = {
+			isa = PBXGroup;
+			children = (
+				5B337176296872F9008017D7 /* Disposable.swift */,
+				5B3371782968730C008017D7 /* Observable.swift */,
+			);
+			path = Observable;
+			sourceTree = "<group>";
+		};
+		5B33718029688B78008017D7 /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				5B337175296872E8008017D7 /* Observable */,
+			);
+			path = MVVM;
+			sourceTree = "<group>";
+		};
 		5B7232ED273A6A4C00C91D8B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				5B7CB1FF273993830046177A /* AirArchitecture.h */,
+				5B33718029688B78008017D7 /* MVVM */,
 				5B7CB214273994460046177A /* Coordinator */,
 				5B7232E8273A52FC00C91D8B /* Info.plist */,
 			);
@@ -298,7 +320,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B7CB2282739A11B0046177A /* CoordinatorState.swift in Sources */,
+				5B337177296872F9008017D7 /* Disposable.swift in Sources */,
 				5B7232EC273A5A1D00C91D8B /* PresentingCoordinator.swift in Sources */,
+				5B3371792968730C008017D7 /* Observable.swift in Sources */,
 				5B7CB2192739973B0046177A /* Coordinator.swift in Sources */,
 				5B9947E42739D23300A23F20 /* BasePresentingCoordinator.swift in Sources */,
 				5B7CB2252739A0000046177A /* BaseCoordinator.swift in Sources */,
@@ -461,7 +485,7 @@
 				INFOPLIST_FILE = AirArchitecture/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -493,7 +517,7 @@
 				INFOPLIST_FILE = AirArchitecture/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -518,6 +542,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = AirArchitectureTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -540,6 +565,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = AirArchitectureTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
