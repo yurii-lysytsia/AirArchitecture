@@ -24,13 +24,7 @@ public final class Observable<Value> {
     
     // MARK: - Private Methods
     
-    /// A lightweight implementation of an observable sequence that you can subscribe to.
-    ///
-    /// - Note: Partly based on [roberthein/Observable](https://github.com/roberthein/Observable).
-    ///
-    /// - Remark: I'd prefer having a protocol definition here, but casting an instance with a generic (e.g. `Variable<Int>(0)`) to a protocol
-    ///           with an associated type (`Observable<Int>`) doesn't work yet. Therefore we use an "abstract" class as a workaround.
-    
+    /// Sends an update for all observers that is subscribed.
     private func notifyObservers() {
         observers.values.forEach { observationBlock in
             observationBlock(value)
