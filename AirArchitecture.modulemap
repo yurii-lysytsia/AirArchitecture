@@ -1,0 +1,6 @@
+framework module AirArchitecture {
+  umbrella header "AirArchitecture-umbrella.h"
+
+  export *
+  module * { export * }
+}
