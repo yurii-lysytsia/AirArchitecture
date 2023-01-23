@@ -65,7 +65,7 @@
 		5B7CB1FF273993830046177A /* AirArchitecture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AirArchitecture.h; sourceTree = "<group>"; };
 		5B7CB204273993830046177A /* AirArchitectureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AirArchitectureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B7CB2182739973B0046177A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		5B7CB21E27399F680046177A /* AirArchitecture.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = AirArchitecture.podspec; sourceTree = "<group>"; };
+		5B7CB21E27399F680046177A /* AirArchitecture.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = AirArchitecture.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		5B7CB22027399F700046177A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5B851284297F03FC00057675 /* AirCoordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AirCoordinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B851286297F03FC00057675 /* AirCoordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AirCoordinator.h; sourceTree = "<group>"; };
@@ -165,18 +165,10 @@
 			isa = PBXGroup;
 			children = (
 				5B851286297F03FC00057675 /* AirCoordinator.h */,
-				5B7CB215273996AC0046177A /* Sources */,
-			);
-			path = Coordinator;
-			sourceTree = "<group>";
-		};
-		5B7CB215273996AC0046177A /* Sources */ = {
-			isa = PBXGroup;
-			children = (
 				5B85129A297F09FF00057675 /* Coordinators */,
 				5B85129B297F0A0800057675 /* Routers */,
 			);
-			path = Sources;
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		5B85128C297F049B00057675 /* Frameworks */ = {
