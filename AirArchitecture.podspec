@@ -17,7 +17,6 @@ Pod::Spec.new do |spec|
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   spec.author             = { "Yurii Lysytsia" => "developer.yurii.lysytsia@gmail.com" }
-  spec.social_media_url   = "https://www.yurii-lysytsia.site"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   spec.ios.deployment_target = "9.0"
