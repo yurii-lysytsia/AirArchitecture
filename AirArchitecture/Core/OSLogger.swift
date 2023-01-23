@@ -1,4 +1,4 @@
-//  Copyright © 2023 Yurii Lysytsia. All rights reserved.
+// Copyright © 2023 Yurii Lysytsia. All rights reserved.
 
 import OSLog
 import os.log

@@ -16,11 +16,11 @@
 		5B851287297F03FC00057675 /* AirCoordinator.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B851286297F03FC00057675 /* AirCoordinator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B85128D297F049B00057675 /* AirCoordinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B851284297F03FC00057675 /* AirCoordinator.framework */; };
 		5B85128E297F049B00057675 /* AirCoordinator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B851284297F03FC00057675 /* AirCoordinator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5B851292297F04EC00057675 /* BasePresentingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9947E32739D23300A23F20 /* BasePresentingCoordinator.swift */; };
-		5B851293297F04EC00057675 /* CoordinatorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7CB2272739A11B0046177A /* CoordinatorState.swift */; };
-		5B851294297F04EC00057675 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7CB2242739A0000046177A /* BaseCoordinator.swift */; };
 		5B851295297F04EC00057675 /* PresentingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7232EB273A5A1D00C91D8B /* PresentingCoordinator.swift */; };
 		5B851296297F04EC00057675 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7CB2182739973B0046177A /* Coordinator.swift */; };
+		5B851299297F09E100057675 /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B851297297F09DF00057675 /* NavigationCoordinator.swift */; };
+		5B85129E297F0AA300057675 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B85129C297F0A1100057675 /* NavigationRouter.swift */; };
+		5B8512A1297F0BA900057675 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B85129F297F0BA600057675 /* TabBarCoordinator.swift */; };
 		5B9947E02739CE3C00A23F20 /* PresentingCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9947DF2739CE3B00A23F20 /* PresentingCoordinatorTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,13 +67,13 @@
 		5B7CB2182739973B0046177A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		5B7CB21E27399F680046177A /* AirArchitecture.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = AirArchitecture.podspec; sourceTree = "<group>"; };
 		5B7CB22027399F700046177A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		5B7CB2242739A0000046177A /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
-		5B7CB2272739A11B0046177A /* CoordinatorState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorState.swift; sourceTree = "<group>"; };
 		5B851284297F03FC00057675 /* AirCoordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AirCoordinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B851286297F03FC00057675 /* AirCoordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AirCoordinator.h; sourceTree = "<group>"; };
+		5B851297297F09DF00057675 /* NavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCoordinator.swift; sourceTree = "<group>"; };
+		5B85129C297F0A1100057675 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
+		5B85129F297F0BA600057675 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		5B9947DD2739C93D00A23F20 /* CoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTests.swift; sourceTree = "<group>"; };
 		5B9947DF2739CE3B00A23F20 /* PresentingCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentingCoordinatorTests.swift; sourceTree = "<group>"; };
-		5B9947E32739D23300A23F20 /* BasePresentingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresentingCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,37 +173,10 @@
 		5B7CB215273996AC0046177A /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				5B7CB2262739A1110046177A /* Models */,
-				5B7CB22327399FF00046177A /* Classes */,
-				5B7CB22227399FEA0046177A /* Protocols */,
+				5B85129A297F09FF00057675 /* Coordinators */,
+				5B85129B297F0A0800057675 /* Routers */,
 			);
 			path = Sources;
-			sourceTree = "<group>";
-		};
-		5B7CB22227399FEA0046177A /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				5B7CB2182739973B0046177A /* Coordinator.swift */,
-				5B7232EB273A5A1D00C91D8B /* PresentingCoordinator.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		5B7CB22327399FF00046177A /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				5B7CB2242739A0000046177A /* BaseCoordinator.swift */,
-				5B9947E32739D23300A23F20 /* BasePresentingCoordinator.swift */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		5B7CB2262739A1110046177A /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				5B7CB2272739A11B0046177A /* CoordinatorState.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		5B85128C297F049B00057675 /* Frameworks */ = {
@@ -211,6 +184,25 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5B85129A297F09FF00057675 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				5B7CB2182739973B0046177A /* Coordinator.swift */,
+				5B7232EB273A5A1D00C91D8B /* PresentingCoordinator.swift */,
+				5B851297297F09DF00057675 /* NavigationCoordinator.swift */,
+				5B85129F297F0BA600057675 /* TabBarCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		5B85129B297F0A0800057675 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				5B85129C297F0A1100057675 /* NavigationRouter.swift */,
+			);
+			path = Routers;
 			sourceTree = "<group>";
 		};
 		5B9947DA2739C91E00A23F20 /* Coordinator */ = {
@@ -432,11 +424,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B851293297F04EC00057675 /* CoordinatorState.swift in Sources */,
 				5B851295297F04EC00057675 /* PresentingCoordinator.swift in Sources */,
+				5B851299297F09E100057675 /* NavigationCoordinator.swift in Sources */,
+				5B85129E297F0AA300057675 /* NavigationRouter.swift in Sources */,
+				5B8512A1297F0BA900057675 /* TabBarCoordinator.swift in Sources */,
 				5B851296297F04EC00057675 /* Coordinator.swift in Sources */,
-				5B851294297F04EC00057675 /* BaseCoordinator.swift in Sources */,
-				5B851292297F04EC00057675 /* BasePresentingCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
