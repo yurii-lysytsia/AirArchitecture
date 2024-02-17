@@ -22,6 +22,17 @@
 		5B85129E297F0AA300057675 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B85129C297F0A1100057675 /* NavigationRouter.swift */; };
 		5B8512A1297F0BA900057675 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B85129F297F0BA600057675 /* TabBarCoordinator.swift */; };
 		5B9947E02739CE3C00A23F20 /* PresentingCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9947DF2739CE3B00A23F20 /* PresentingCoordinatorTests.swift */; };
+		5BA7915F2B81378B001550EE /* NiblessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA791572B81378B001550EE /* NiblessView.swift */; };
+		5BA791602B81378B001550EE /* NiblessPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA791582B81378B001550EE /* NiblessPageViewController.swift */; };
+		5BA791612B81378B001550EE /* NiblessNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA791592B81378B001550EE /* NiblessNavigationController.swift */; };
+		5BA791632B81378B001550EE /* NiblessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA7915B2B81378B001550EE /* NiblessViewController.swift */; };
+		5BA791642B81378B001550EE /* NiblessCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA7915C2B81378B001550EE /* NiblessCollectionViewCell.swift */; };
+		5BA791652B81378B001550EE /* NiblessTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA7915D2B81378B001550EE /* NiblessTableViewCell.swift */; };
+		5BA791662B81378B001550EE /* NiblessCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA7915E2B81378B001550EE /* NiblessCollectionReusableView.swift */; };
+		5BA791682B8138E6001550EE /* NiblessTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA791672B8138E6001550EE /* NiblessTableViewHeaderFooterView.swift */; };
+		5BA7916A2B813925001550EE /* NiblessScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA791692B813925001550EE /* NiblessScrollView.swift */; };
+		5BA7916C2B81395A001550EE /* NiblessControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA7916B2B81395A001550EE /* NiblessControl.swift */; };
+		5BA7916E2B81398A001550EE /* NiblessButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA7916D2B81398A001550EE /* NiblessButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +85,17 @@
 		5B85129F297F0BA600057675 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		5B9947DD2739C93D00A23F20 /* CoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTests.swift; sourceTree = "<group>"; };
 		5B9947DF2739CE3B00A23F20 /* PresentingCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentingCoordinatorTests.swift; sourceTree = "<group>"; };
+		5BA791572B81378B001550EE /* NiblessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NiblessView.swift; sourceTree = "<group>"; };
+		5BA791582B81378B001550EE /* NiblessPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NiblessPageViewController.swift; sourceTree = "<group>"; };
+		5BA791592B81378B001550EE /* NiblessNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NiblessNavigationController.swift; sourceTree = "<group>"; };
+		5BA7915B2B81378B001550EE /* NiblessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NiblessViewController.swift; sourceTree = "<group>"; };
+		5BA7915C2B81378B001550EE /* NiblessCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NiblessCollectionViewCell.swift; sourceTree = "<group>"; };
+		5BA7915D2B81378B001550EE /* NiblessTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NiblessTableViewCell.swift; sourceTree = "<group>"; };
+		5BA7915E2B81378B001550EE /* NiblessCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NiblessCollectionReusableView.swift; sourceTree = "<group>"; };
+		5BA791672B8138E6001550EE /* NiblessTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiblessTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
+		5BA791692B813925001550EE /* NiblessScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiblessScrollView.swift; sourceTree = "<group>"; };
+		5BA7916B2B81395A001550EE /* NiblessControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiblessControl.swift; sourceTree = "<group>"; };
+		5BA7916D2B81398A001550EE /* NiblessButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiblessButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +168,7 @@
 			children = (
 				5B7CB1FF273993830046177A /* AirArchitecture.h */,
 				5B7232E8273A52FC00C91D8B /* Info.plist */,
+				5BA791562B813770001550EE /* Nibless */,
 				5B021831296C4E78003260FA /* Core */,
 				5B7CB214273994460046177A /* Coordinator */,
 			);
@@ -221,6 +244,24 @@
 				5B9947DF2739CE3B00A23F20 /* PresentingCoordinatorTests.swift */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		5BA791562B813770001550EE /* Nibless */ = {
+			isa = PBXGroup;
+			children = (
+				5BA7915E2B81378B001550EE /* NiblessCollectionReusableView.swift */,
+				5BA7915C2B81378B001550EE /* NiblessCollectionViewCell.swift */,
+				5BA791592B81378B001550EE /* NiblessNavigationController.swift */,
+				5BA791582B81378B001550EE /* NiblessPageViewController.swift */,
+				5BA7915D2B81378B001550EE /* NiblessTableViewCell.swift */,
+				5BA791672B8138E6001550EE /* NiblessTableViewHeaderFooterView.swift */,
+				5BA791572B81378B001550EE /* NiblessView.swift */,
+				5BA7916D2B81398A001550EE /* NiblessButton.swift */,
+				5BA7916B2B81395A001550EE /* NiblessControl.swift */,
+				5BA791692B813925001550EE /* NiblessScrollView.swift */,
+				5BA7915B2B81378B001550EE /* NiblessViewController.swift */,
+			);
+			path = Nibless;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,7 +440,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BA791652B81378B001550EE /* NiblessTableViewCell.swift in Sources */,
+				5BA791662B81378B001550EE /* NiblessCollectionReusableView.swift in Sources */,
+				5BA7916E2B81398A001550EE /* NiblessButton.swift in Sources */,
+				5BA791632B81378B001550EE /* NiblessViewController.swift in Sources */,
+				5BA791612B81378B001550EE /* NiblessNavigationController.swift in Sources */,
+				5BA7916A2B813925001550EE /* NiblessScrollView.swift in Sources */,
+				5BA791682B8138E6001550EE /* NiblessTableViewHeaderFooterView.swift in Sources */,
+				5BA791602B81378B001550EE /* NiblessPageViewController.swift in Sources */,
+				5BA7916C2B81395A001550EE /* NiblessControl.swift in Sources */,
 				5B021833296C4E81003260FA /* OSLogger.swift in Sources */,
+				5BA791642B81378B001550EE /* NiblessCollectionViewCell.swift in Sources */,
+				5BA7915F2B81378B001550EE /* NiblessView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
