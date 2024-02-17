@@ -13,7 +13,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name = "AirArchitecture"
-  spec.version = "0.3.0"
+  spec.version = "0.4.0"
   spec.summary = "Abstract classes to speed up your coding time!"
   spec.description = "This framework contains different architecture pattern components, such as coordinator, MVC, MVP, MVVM and other base classes"
   spec.homepage     = "https://github.com/yurii-lysytsia/#{spec.name}"
@@ -74,6 +74,11 @@ Pod::Spec.new do |spec|
 
   spec.subspec "Umbrella" do |subspec|
     subspec.source_files = "#{spec.name}-umbrella.h"
+  end
+
+  spec.subspec "Nibless" do |subspec|
+    subspec.dependency "#{spec.name}/Umbrella"
+    subspec.source_files = "#{spec.name}/Nibless/**/*.swift"
   end
 
   spec.subspec "Coordinator" do |subspec|
