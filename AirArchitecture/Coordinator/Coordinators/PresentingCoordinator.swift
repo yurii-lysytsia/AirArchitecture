@@ -46,14 +46,21 @@ open class BasePresentingCoordinator: BaseCoordinator, PresentingCoordinator, UI
     /// Starts the given coordinator and present another flow above coordinator.
     open func present(coordinator: PresentingCoordinator, animated: Bool, completion: (() -> Void)? = nil) {
         // Reject presenting if this coordinator has already presented other coordinator
-        if presentedCoordinator != nil {
+        guard presentedCoordinator == nil else {
             assertionFailure("\(#function) - It's not possible to present coordinator. The coordinator is already presented other coordinator")
             return
         }
         
-        // Start and present new coordinator
+        // Add a new coordinator to the children stack
         add(coordinator: coordinator)
+        
+        // Prepare and start presenting coordinator
+        coordinator.start()
+        
+        // Configure presenting view controller
         coordinator.rootViewController.presentationController?.delegate = self
+        
+        // Present the coordinator
         rootViewController.present(coordinator.rootViewController, animated: animated) { [weak self] in
             self?.presentedCoordinator = coordinator
             completion?()
@@ -62,12 +69,14 @@ open class BasePresentingCoordinator: BaseCoordinator, PresentingCoordinator, UI
     
     /// Dismisses the view controller that was presented by this coordinator
     open func dismiss(animated: Bool, completion: (() -> Void)? = nil) {
-        guard let presentedCoordinator = presentedCoordinator else {
+        guard let presentedCoordinator else {
             assertionFailure("\(#function) - It is not possible to dismiss presented coordinator. The coordinator doesn't have presented coordinator")
             return
         }
         
         rootViewController.dismiss(animated: animated) { [weak self] in
+            // Finish presented coordinator and remove it from the presenting coordinator
+            presentedCoordinator.finish()
             self?.presentedCoordinator = nil
             self?.remove(coordinator: presentedCoordinator)
             completion?()
@@ -78,7 +87,7 @@ open class BasePresentingCoordinator: BaseCoordinator, PresentingCoordinator, UI
     
     open func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
         // Remove interactively dismissed coordinator. Needs for iOS 13 and newer, when user dismiss view controller using swipe down.
-        guard let presentedCoordinator = presentedCoordinator else {
+        guard let presentedCoordinator else {
             assertionFailure("\(#function) - It's not possible to remove child coordinator. The coordinator doesn't have presented coordinator")
             return
         }
@@ -88,6 +97,7 @@ open class BasePresentingCoordinator: BaseCoordinator, PresentingCoordinator, UI
             return
         }
         
+        presentedCoordinator.finish()
         self.presentedCoordinator = nil
         remove(coordinator: presentedCoordinator)
     }

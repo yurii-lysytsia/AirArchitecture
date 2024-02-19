@@ -59,13 +59,23 @@ open class BaseNavigationCoordinator: BasePresentingCoordinator, NavigationCoord
     
     /// Push another flow to current flow. You should use this method when this coordinator needs use another flow inside himself.
     open func push(coordinator: NavigationCoordinator, animated: Bool) {
+        // Prepare and start presenting coordinator
+        coordinator.start()
+        
+        // Try to get anchor view controller before do next steps
         guard let childAnchorViewController = coordinator.anchorViewController else {
+            coordinator.finish()
             assertionFailure("\(#function) - child coordinator doesn't have anchor view controller")
             return
         }
         
+        // Add a new coordinator to the children stack
         add(coordinator: coordinator)
-        coordinator.anchorViewController?.popCallback = { [weak self, unowned coordinator] in
+        
+        // Subscribe for pop callback to remov presented coordinator when it will be popped
+        childAnchorViewController.popCallback = { [weak self, unowned coordinator] in
+            // Finish presented coordinator and remove it from the presenting coordinator
+            coordinator.finish()
             self?.remove(coordinator: coordinator)
         }
         router.push(childAnchorViewController, animated: animated)

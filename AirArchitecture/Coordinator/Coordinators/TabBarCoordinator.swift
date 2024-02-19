@@ -39,9 +39,11 @@ open class BaseTabBarCoordinator: BasePresentingCoordinator, TabBarCoordinator {
     /// Sets the root coordinators of the tab bar controller.
     open func set(coordinators: [PresentingCoordinator], animated: Bool) {
         var viewControllers = [UIViewController]()
-        coordinators.forEach {
-            add(coordinator: $0)
-            viewControllers.append($0.rootViewController)
+        coordinators.forEach { childCoordinator in
+            // Prepares and adds a new coordinator to the children stack
+            childCoordinator.start()
+            add(coordinator: childCoordinator)
+            viewControllers.append(childCoordinator.rootViewController)
         }
         tabBarController.setViewControllers(viewControllers, animated: animated)
     }

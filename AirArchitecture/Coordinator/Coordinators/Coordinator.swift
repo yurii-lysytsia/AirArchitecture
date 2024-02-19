@@ -15,6 +15,12 @@ public protocol Coordinator: AnyObject {
     
     /// Removes unique child if contains dependency
     func remove(coordinator: Coordinator)
+    
+    /// Prepares the coordinator to be displayed. The root view controller should be set and configured before it will have displayed
+    func start()
+    
+    /// Prepares the coordinator to be dismissed. The root view controller should be removed from the stack
+    func finish()
 }
 
 /// Abstract class of coordinator which contains dependencies to child coordinators. You should override this class to use.
@@ -38,4 +44,8 @@ open class BaseCoordinator: NSObject, Coordinator {
     open func remove(coordinator: Coordinator) {
         children.removeAll { $0 === coordinator }
     }
+    
+    open func start() {}
+    
+    open func finish() {}
 }
