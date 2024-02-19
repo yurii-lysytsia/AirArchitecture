@@ -70,7 +70,7 @@ Pod::Spec.new do |spec|
 
   # ――― Source Code (Core) ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
-  spec.default_subspecs = :none
+  spec.default_subspecs = "Nibless", "Coordinator"
 
   spec.subspec "Umbrella" do |subspec|
     subspec.source_files = "#{spec.name}-umbrella.h"
